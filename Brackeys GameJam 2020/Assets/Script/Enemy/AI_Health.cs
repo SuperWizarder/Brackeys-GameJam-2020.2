@@ -14,7 +14,7 @@ public class AI_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        health += healthPerSec * Time.deltaTime;
+        health += Time.deltaTime;
 
         if(health >= upgradeHealth)
         {
@@ -26,5 +26,20 @@ public class AI_Health : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate(nextLevel, transform.position, transform.rotation);
+    }
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+
+        if(health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
