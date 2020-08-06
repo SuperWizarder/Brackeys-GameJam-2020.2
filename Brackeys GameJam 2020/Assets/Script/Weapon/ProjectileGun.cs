@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guns : MonoBehaviour
+public class ProjectileGun : MonoBehaviour
 {
     //Stats
     public int damage;
@@ -81,7 +81,8 @@ public class Guns : MonoBehaviour
         bulletsShots--;
 
         //Graphics
-        Instantiate(impactFX, hit.point, Quaternion.Euler(0, 180, 0));
+        GameObject impactEffect = Instantiate(impactFX, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impactEffect, .5f);
         Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
         Invoke("ResetShot", fireRate);

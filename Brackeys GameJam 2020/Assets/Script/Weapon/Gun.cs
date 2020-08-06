@@ -2,10 +2,10 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Gun : MonoBehaviour
+public class RacastGun : MonoBehaviour
 {
 	#region Variables
-	public int damage = 10;
+	public float damage = 10;
     public float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 30f;
@@ -85,11 +85,11 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            /*Enemy enemy = hit.transform.GetComponent<Enemy>();
-            if (enemy != null)
+            AI_Health aiHealth = hit.transform.GetComponent<AI_Health>();
+            if (aiHealth != null)
             {
-                enemy.TakeDamage(damage);
-            }*/
+                aiHealth.TakeDamage(damage);
+            }
 
             if (hit.rigidbody != null)
             {
