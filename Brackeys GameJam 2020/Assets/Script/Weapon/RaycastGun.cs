@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class RacastGun : MonoBehaviour
+public class RaycastGun : MonoBehaviour
 {
 	#region Variables
 	public float damage = 10;
@@ -58,6 +58,15 @@ public class RacastGun : MonoBehaviour
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
+
+        if (Input.GetButton("Fire2"))
+		{
+            animator.SetBool("Aiming", true);
+		}
+        else
+		{
+            animator.SetBool("Aiming", false);
+		}
     }
 	#endregion
 

@@ -22,8 +22,11 @@ public class ProjectileGun : MonoBehaviour
 
     public RaycastHit hit;
 
+    public Animator anim;
+    public ParticleSystem muzzleFlash;
+
     //Graphic
-    public GameObject muzzleFlash, bulletHoleGraphic, impactFX;
+    public GameObject bulletHoleGraphic, impactFX;
 
     public CameraShake camShake;
     public float camShakeMagnitude, camShakeDuration;
@@ -83,7 +86,7 @@ public class ProjectileGun : MonoBehaviour
         //Graphics
         GameObject impactEffect = Instantiate(impactFX, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactEffect, .5f);
-        Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+        muzzleFlash.Play();
 
         Invoke("ResetShot", fireRate);
 
@@ -100,11 +103,15 @@ public class ProjectileGun : MonoBehaviour
     {
         reloading = true;
 
+        anim.SetBool("Reloading", true);
+
         Invoke("ReloadFinished", reloadTime);
     }
 
     private void ReloadFinished()
     {
+        anim.SetBool("Reloading", false);
+
         bulletLeft = magazineSize;
         reloading = false;
     }
