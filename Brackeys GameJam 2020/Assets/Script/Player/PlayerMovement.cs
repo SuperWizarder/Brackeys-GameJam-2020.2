@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float defaultSpeed;
     public float sprintSpeed;
 
-    public float dashDistance;
-
     public float mouseSensitivity;
     public float jumpHeight;
     public float raycastDistance;

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using TMPro;
+using EZCameraShake;
 
 public class Gun : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class Gun : MonoBehaviour
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
-    int bulletsLeft, bulletsShot;
+    public int bulletsLeft, bulletsShot;
 
     //bools 
     bool shooting, readyToShoot, reloading;
@@ -17,11 +17,13 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public RaycastHit rayHit;
 
+    public Animator anim;
+
     //Graphics
     public ParticleSystem muzzleFlash;
     public GameObject impactFX;
-    public CameraShake camShake;
-    public float camShakeMagnitude, camShakeDuration;
+
+    public float magnitude, roughness, fadeInTime, fadeOutTime;
 
     private void Awake()
     {
@@ -37,7 +39,7 @@ public class Gun : MonoBehaviour
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
+        if (Input.GetKeyDown(KeyCode.R) || bulletsLeft <= 0 && !reloading) Reload();
 
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
@@ -71,7 +73,7 @@ public class Gun : MonoBehaviour
         }
 
         //ShakeCamera
-        StartCoroutine(camShake.Shake(camShakeDuration, camShakeMagnitude));
+        CameraShaker.Instance.ShakeOnce(magnitude,roughness, fadeInTime,fadeOutTime);
 
         //Graphics
         muzzleFlash.Play();
@@ -95,10 +97,14 @@ public class Gun : MonoBehaviour
     {
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
+
+        anim.SetBool("Reloading", true);
     }
     private void ReloadFinished()
     {
         bulletsLeft = magazineSize;
         reloading = false;
+
+        anim.SetBool("Reloading", false);
     }
 }
