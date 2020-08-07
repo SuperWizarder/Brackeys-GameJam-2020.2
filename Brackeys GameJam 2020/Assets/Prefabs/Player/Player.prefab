@@ -430,7 +430,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615873851669336333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -816,6 +816,26 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 615873851232109060}
+    - target: {fileID: 44227225699194243, guid: e186d18b4f95b91458c52292daa4ccab,
+        type: 3}
+      propertyPath: shakeMagnitude
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 44227225699194243, guid: e186d18b4f95b91458c52292daa4ccab,
+        type: 3}
+      propertyPath: shakeRoughness
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 44227225699194243, guid: e186d18b4f95b91458c52292daa4ccab,
+        type: 3}
+      propertyPath: fadeInTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 44227225699194243, guid: e186d18b4f95b91458c52292daa4ccab,
+        type: 3}
+      propertyPath: fadeOutTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5877059629420908570, guid: e186d18b4f95b91458c52292daa4ccab,
         type: 3}
       propertyPath: m_LocalPosition.x
