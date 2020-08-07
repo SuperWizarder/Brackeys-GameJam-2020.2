@@ -4,6 +4,7 @@ public class AI_Look : MonoBehaviour
 {
 	#region Variables
 	public float speed;
+
 	private GameObject target;
 	#endregion
 

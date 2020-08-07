@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class AI_Move: MonoBehaviour
 {
-	#region Variables
-	private Transform target;
     public float speed;
+    public float stoppingDistance;
+    public float retreatDistance;
 
-    private Rigidbody rb;
-	#endregion
+    public Transform player;
 
-	#region Unity Methods
-	void Start()
+    private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        rb = GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void Update()
     {
-        Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        rb.MovePosition(pos);
+        if(Vector3.Distance(transform.position, player.position) > stoppingDistance)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }   
     }
-	#endregion
 }
