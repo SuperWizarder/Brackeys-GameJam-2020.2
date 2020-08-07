@@ -6,6 +6,7 @@ public class AI_Health : MonoBehaviour
     float health;
     public float startHealth;
     public float healRate;
+    public float rewindRate;
     public float upgradeHealth;
 
     public TextMeshProUGUI healthText;
@@ -19,7 +20,14 @@ public class AI_Health : MonoBehaviour
 
 	private void Update()
     {
-        health += Time.deltaTime * healRate;
+        if (RewindGun.isRewinding && health >= startHealth)
+		{
+            health -= Time.deltaTime * rewindRate;
+        }
+        else
+		{
+            health += Time.deltaTime * healRate;
+		}
 
         healthText.text = (Mathf.RoundToInt(health)).ToString();
 
