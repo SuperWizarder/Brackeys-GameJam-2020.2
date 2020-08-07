@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 150
-  healRate: 5
+  healRate: 20
   rewindRate: 5
   upgradeHealth: 200
   healthText: {fileID: 0}
