@@ -10,16 +10,43 @@ public class Guns : MonoBehaviour
     public float fireRate;
     float nextTimeToFire = 0f;
 
+    public int maxAmmo;
+    public int currentAmmo;
+    public float reloadTime;
+
+    bool isReloading = false;
+
     public float shakeMagnitude, shakeRoughness,fadeInTime,fadeOutTime;
 
     public ParticleSystem muzzleFlash;
     public GameObject impactFX;
 
+    public Animator animator;
     public Camera fpsCam;
+
+    private void Start()
+    {
+        currentAmmo = maxAmmo;
+    }
+
+    private void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("Reloading", false);
+    }
 
 
     void Update()
     {
+        if (isReloading)
+        {
+            return;
+        }
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
@@ -31,6 +58,7 @@ public class Guns : MonoBehaviour
     {
         muzzleFlash.Play();
 
+        currentAmmo--;
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, fadeInTime, fadeOutTime);
 
         RaycastHit hit;
@@ -46,5 +74,20 @@ public class Guns : MonoBehaviour
             GameObject impactGO = Instantiate(impactFX, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 0.25f);
         }
+    }
+
+    IEnumerator Reload()
+    {
+        isReloading = true;
+
+        animator.SetBool("Reloading", true);
+
+        yield return new WaitForSeconds(reloadTime -.25f);
+        yield return new WaitForSeconds(.25f);
+
+        animator.SetBool("Reloading", false);
+
+        currentAmmo = maxAmmo;
+        isReloading = false;
     }
 }

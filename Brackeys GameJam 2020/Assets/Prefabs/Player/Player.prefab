@@ -119,12 +119,16 @@ MonoBehaviour:
   range: 100
   spread: 0
   fireRate: 20
+  maxAmmo: 30
+  currentAmmo: 0
+  reloadTime: 0.3
   shakeMagnitude: 2
   shakeRoughness: 0.7
   fadeInTime: 0.1
   fadeOutTime: 1
   muzzleFlash: {fileID: 735047674729191455}
   impactFX: {fileID: 1000011945391522, guid: b048e431a455f9149a18b51c02714945, type: 3}
+  animator: {fileID: 310026891374289973}
   fpsCam: {fileID: 615873851232109060}
 --- !u!1 &615873850506157645
 GameObject:
@@ -331,7 +335,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 2871
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -526,7 +530,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &615873851661348799
 CanvasRenderer:
@@ -549,13 +553,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a6c16c2747a43ce46b3fd3435b03321a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd727cbe0ebc18e43b481bfd3c2ba50e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -595,7 +599,7 @@ Transform:
   m_GameObject: {fileID: 615873851669336333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.114502, y: 1, z: -39.19935}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 615873852289073187}
   - {fileID: 615873850762971577}
