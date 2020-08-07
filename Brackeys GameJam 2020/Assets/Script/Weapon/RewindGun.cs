@@ -13,7 +13,7 @@ public class RewindGun : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Fire1"))
 		{
-			isRewinding = true;
+			StartCoroutine(Rewind());
 		}
 	}
 	#endregion
@@ -21,6 +21,7 @@ public class RewindGun : MonoBehaviour
 	#region Methods
 	IEnumerator Rewind()
 	{
+		Debug.Log("Rewinding");
 		isRewinding = true;
 		yield return new WaitForSeconds(rewindTime);
 		isRewinding = false;
