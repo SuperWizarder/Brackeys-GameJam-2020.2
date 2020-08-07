@@ -6,7 +6,9 @@ using EZCameraShake;
 public class Guns : MonoBehaviour
 {
     public float damage, range, spread;
-    public float amountOfBullets;
+
+    public float fireRate;
+    float nextTimeToFire = 0f;
 
     public float shakeMagnitude, shakeRoughness,fadeInTime,fadeOutTime;
 
@@ -15,10 +17,12 @@ public class Guns : MonoBehaviour
 
     public Camera fpsCam;
 
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
+            nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
     }
@@ -30,7 +34,8 @@ public class Guns : MonoBehaviour
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, fadeInTime, fadeOutTime);
 
         RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position,fpsCam.transform.forward, out hit, range))
+
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             AI_Health health = hit.transform.GetComponent<AI_Health>();
             if (health != null)
