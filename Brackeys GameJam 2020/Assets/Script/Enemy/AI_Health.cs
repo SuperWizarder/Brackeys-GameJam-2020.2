@@ -1,22 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 
 public class AI_Health : MonoBehaviour
 {
-    public float health;
-    public int healthPerSec;
-
+    float health;
+    public float startHealth;
+    public float healRate;
     public float upgradeHealth;
+
+    public TextMeshProUGUI healthText;
 
     public GameObject nextLevel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        health += Time.deltaTime;
+	private void Start()
+	{
+        health = startHealth;
+	}
 
-        if(health >= upgradeHealth)
+	private void Update()
+    {
+        health += Time.deltaTime * healRate;
+
+        healthText.text = (Mathf.RoundToInt(health)).ToString();
+
+        if (health >= upgradeHealth)
         {
             LevelUp();
         }
