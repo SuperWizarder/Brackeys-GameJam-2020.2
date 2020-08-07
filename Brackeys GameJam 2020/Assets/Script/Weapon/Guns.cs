@@ -49,6 +49,7 @@ public class Guns : MonoBehaviour
         }
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
+            animator.Play("Shooting");
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
