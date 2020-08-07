@@ -603,7 +603,7 @@ Transform:
   m_GameObject: {fileID: 615873851669336333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.114502, y: 1, z: -39.19935}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 615873852289073187}
   - {fileID: 615873850762971577}
@@ -625,7 +625,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615873851669336333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -704,7 +704,7 @@ MonoBehaviour:
   sprintSpeed: 45
   mouseSensitivity: 100
   jumpHeight: 5
-  raycastDistance: 1.6
+  raycastDistance: 2.1
   playerCam: {fileID: 615873851232109060}
 --- !u!1 &615873851681033465
 GameObject:
