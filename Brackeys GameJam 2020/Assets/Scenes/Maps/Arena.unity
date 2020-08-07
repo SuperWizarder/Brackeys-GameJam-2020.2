@@ -1176,6 +1176,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level2_AssualtBot
       objectReference: {fileID: 0}
+    - target: {fileID: 5502007498684255511, guid: efac3ccf9f1b52d45be0c65b2d0ff6ae,
+        type: 3}
+      propertyPath: rewindRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5502007498684255515, guid: efac3ccf9f1b52d45be0c65b2d0ff6ae,
         type: 3}
       propertyPath: player
@@ -1249,11 +1254,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 615873851702944298, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82ce71c282e0be84dbcb15e66199c0f4, type: 3}
