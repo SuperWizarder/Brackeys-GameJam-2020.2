@@ -3,7 +3,22 @@ guid: 8efb02a5b24eced448ea6e5c0c59fece
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: aaabd2b3b570dd34a80559807d7d5453, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handle
+    second: {fileID: 2100000, guid: cd27d6de15216bc479352ee9b9741081, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RecoilCtrl
+    second: {fileID: 2100000, guid: 0271055ea2018d543a33fa7095325dd4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
