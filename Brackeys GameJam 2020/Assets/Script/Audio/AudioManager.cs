@@ -16,14 +16,6 @@ public class AudioManager : MonoBehaviour
         Play("Theme");
 	}
 
-	private void OnEnable()
-	{
-        Stop("MissileLaunch");
-        Stop("MissileImpact");
-        Stop("StandardTurretShoot");
-        Stop("TurretTransaction");
-        Stop("LaserBeamerShoot");
-    }
 
     void Awake()
     {
