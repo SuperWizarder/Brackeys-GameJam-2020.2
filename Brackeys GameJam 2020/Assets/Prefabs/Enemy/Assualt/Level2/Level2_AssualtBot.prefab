@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1229568cb0d75ae46bb741be66c61f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
 --- !u!114 &4230756132234237702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,12 +482,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c8479aeec57d4448081bd925ed58e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 300
+  startHealth: 250
   healRate: 30
   rewindRate: 80
   upgradeHealth: 1000
   healthText: {fileID: 1297968878}
   nextLevel: {fileID: 300134179683319672, guid: 5260ffee4ea74c24d93fda1268f34415,
+    type: 3}
+  lastLevel: {fileID: 4274527694734814823, guid: 433c0cdffbe839a488b507a48e9896e4,
     type: 3}
 --- !u!114 &5502007498684255515
 MonoBehaviour:
@@ -502,8 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1104207251}
-  firePoint2: {fileID: 1615817066}
-  player: {fileID: 0}
+  bulletSpeed: 0
   range: 100
   damage: 50
   fireRange: 10
