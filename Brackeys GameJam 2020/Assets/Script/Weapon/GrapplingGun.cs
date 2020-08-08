@@ -16,11 +16,11 @@ public class GrapplingGun : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetMouseButtonDown(1))
+		if (Input.GetButtonDown("Fire2"))
 		{
 			StartGrapple();
 		}
-		else if (Input.GetMouseButtonUp(1))
+		else if (Input.GetButtonUp("Fire2"))
 		{
 			StopGrapple();
 		}

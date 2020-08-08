@@ -5,8 +5,9 @@ using UnityEngine;
 public class AI_Shoot : MonoBehaviour
 {
     public Transform firePoint;
-    public Transform firePoint2;
-    public Transform player;
+    private Transform player;
+
+    public float bulletSpeed;
 
     public float range, damage;
 
@@ -17,6 +18,8 @@ public class AI_Shoot : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        
     }
 
     private void Update()
@@ -29,16 +32,9 @@ public class AI_Shoot : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, range))
-        {
-            PlayerHealth health = hit.collider.GetComponent<PlayerHealth>();
-
-            if (health != null)
-            {
-                health.TakeDamage(damage);
-            }
-        }
+        GameObject bulletGO = Instantiate(bullet, firePoint.position, firePoint.rotation);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * bulletSpeed, ForceMode.VelocityChange);
     }
 
 }
