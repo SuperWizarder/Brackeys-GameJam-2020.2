@@ -21,7 +21,8 @@ public class RewindGun : MonoBehaviour
 	#region Methods
 	IEnumerator Rewind()
 	{
-		Debug.Log("Rewinding");
+		FindObjectOfType<AudioManager>().Play("Rewind");
+
 		isRewinding = true;
 		yield return new WaitForSeconds(rewindTime);
 		isRewinding = false;

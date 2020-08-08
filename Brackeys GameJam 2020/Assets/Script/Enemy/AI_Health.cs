@@ -32,13 +32,13 @@ public class AI_Health : MonoBehaviour
 
         healthText.text = (Mathf.RoundToInt(health)).ToString();
 
-        if (health >= upgradeHealth)
+        if (health >= upgradeHealth && nextLevel != null)
         {
             LevelUp();
             Debug.Log("LevelUp");
         }
 
-        if (health < startHealth)
+        if (health < startHealth && lastLevel != null)
 		{
             LevelDown();
             Debug.Log("LevelDown");

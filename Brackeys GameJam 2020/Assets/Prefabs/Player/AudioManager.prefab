@@ -45,7 +45,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Theme
-    clip: {fileID: 8300000, guid: a4d970ac54fed984d95540636661b421, type: 3}
+    clip: {fileID: 8300000, guid: 834328a06c4f6204cb6a023357298dd1, type: 3}
+    volume: 1
+    pitch: 1
+    spacialBlend: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: GunShot
+    clip: {fileID: 8300000, guid: e8d6bff72d3f9f2499a389603ba1e0a8, type: 3}
+    volume: 1
+    pitch: 1
+    spacialBlend: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Reload
+    clip: {fileID: 8300000, guid: dfe6854ba402a994b93e0a291c525281, type: 3}
     volume: 1
     pitch: 1
     spacialBlend: 0

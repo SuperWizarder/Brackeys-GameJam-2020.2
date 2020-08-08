@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 8866018094739498315}
   m_Layer: 0
   m_Name: Level3_AssaultBot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 1000
-  healRate: 50
-  rewindRate: 100
+  healRate: 25
+  rewindRate: 50
   upgradeHealth: 0
   healthText: {fileID: 1289361222954006820}
   nextLevel: {fileID: 0}
