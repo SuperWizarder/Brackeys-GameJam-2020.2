@@ -21,6 +21,9 @@ public class Guns : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactFX;
 
+    public float recoilForce;
+    public Rigidbody playerRB;
+
     public Animator animator;
     public Camera fpsCam;
 
@@ -62,10 +65,16 @@ public class Guns : MonoBehaviour
         currentAmmo--;
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, fadeInTime, fadeOutTime);
 
+        Vector3 direction = fpsCam.transform.forward;
+
+        playerRB.AddForce(-direction.normalized * recoilForce, ForceMode.Impulse);
+
         RaycastHit hit;
 
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if (Physics.Raycast(fpsCam.transform.position, direction, out hit, range))
         {
+
+
             AI_Health health = hit.transform.GetComponent<AI_Health>();
             if (health != null)
             {
