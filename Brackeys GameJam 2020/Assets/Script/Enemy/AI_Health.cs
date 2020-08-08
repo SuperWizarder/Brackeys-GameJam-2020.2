@@ -12,6 +12,7 @@ public class AI_Health : MonoBehaviour
     public TextMeshProUGUI healthText;
 
     public GameObject nextLevel;
+    public GameObject lastLevel;
 
 	private void Start()
 	{
@@ -34,7 +35,14 @@ public class AI_Health : MonoBehaviour
         if (health >= upgradeHealth)
         {
             LevelUp();
+            Debug.Log("LevelUp");
         }
+
+        if (health < startHealth)
+		{
+            LevelDown();
+            Debug.Log("LevelDown");
+		}
     }
 
     void LevelUp()
@@ -42,6 +50,12 @@ public class AI_Health : MonoBehaviour
         Destroy(gameObject);
         Instantiate(nextLevel, transform.position, transform.rotation);
     }
+
+    void LevelDown()
+	{
+        Destroy(gameObject);
+        Instantiate(lastLevel, transform.position, transform.rotation);
+	}
 
     public void TakeDamage(float amount)
     {
