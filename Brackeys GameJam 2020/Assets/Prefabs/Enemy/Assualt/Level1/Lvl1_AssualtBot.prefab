@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 4004621029930195001}
   m_Layer: 0
   m_Name: Lvl1_AssualtBot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 150
   healRate: 2
-  rewindRate: 1
+  rewindRate: 5
   upgradeHealth: 250
   healthText: {fileID: 1833811689}
   nextLevel: {fileID: 3172568198317610114, guid: efac3ccf9f1b52d45be0c65b2d0ff6ae,

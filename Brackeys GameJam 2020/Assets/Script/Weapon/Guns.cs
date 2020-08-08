@@ -62,6 +62,8 @@ public class Guns : MonoBehaviour
     {
         muzzleFlash.Play();
 
+        FindObjectOfType<AudioManager>().Play("GunShot");
+
         currentAmmo--;
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, fadeInTime, fadeOutTime);
 
@@ -91,6 +93,8 @@ public class Guns : MonoBehaviour
         isReloading = true;
 
         animator.SetBool("Reloading", true);
+
+        FindObjectOfType<AudioManager>().Play("Reload");
 
         yield return new WaitForSeconds(reloadTime -.25f);
         yield return new WaitForSeconds(.25f);
