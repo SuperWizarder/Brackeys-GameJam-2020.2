@@ -30,6 +30,7 @@ public class Guns : MonoBehaviour
     private void Start()
     {
         currentAmmo = maxAmmo;
+        animator.SetBool("Reloading", false);
     }
 
     private void OnEnable()

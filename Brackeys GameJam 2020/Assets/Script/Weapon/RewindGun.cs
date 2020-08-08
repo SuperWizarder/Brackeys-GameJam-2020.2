@@ -26,6 +26,8 @@ public class RewindGun : MonoBehaviour
 		isRewinding = true;
 		yield return new WaitForSeconds(rewindTime);
 		isRewinding = false;
+
+		gameObject.SetActive(false);
 	}
 	#endregion
 }

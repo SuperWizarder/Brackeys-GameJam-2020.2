@@ -9,6 +9,8 @@ public class AI_Health : MonoBehaviour
     public float rewindRate;
     public float upgradeHealth;
 
+
+
     public TextMeshProUGUI healthText;
 
     public GameObject nextLevel;
@@ -37,12 +39,21 @@ public class AI_Health : MonoBehaviour
             LevelUp();
             Debug.Log("LevelUp");
         }
+        /*else if(health >= upgradeHealth && nextLevel == null)
+        {
+            Die();
+        }*/
 
-        if (health < startHealth && lastLevel != null)
+        if (health <= startHealth && lastLevel != null)
 		{
             LevelDown();
             Debug.Log("LevelDown");
 		}
+        /*else if (health <= startHealth && lastLevel == null)
+		{
+            Die();
+            Debug.Log("LevelDown");
+		}*/
     }
 
     void LevelUp()
@@ -69,6 +80,7 @@ public class AI_Health : MonoBehaviour
 
     void Die()
     {
+
         Destroy(gameObject);
     }
 }

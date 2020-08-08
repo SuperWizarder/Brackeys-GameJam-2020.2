@@ -56,12 +56,12 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     spacialBlend: 0
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: Reload
     clip: {fileID: 8300000, guid: dfe6854ba402a994b93e0a291c525281, type: 3}
     volume: 1
     pitch: 1
     spacialBlend: 0
-    loop: 1
+    loop: 0
     source: {fileID: 0}

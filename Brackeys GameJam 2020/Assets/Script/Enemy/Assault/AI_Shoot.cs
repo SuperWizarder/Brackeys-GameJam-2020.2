@@ -4,37 +4,30 @@ using UnityEngine;
 
 public class AI_Shoot : MonoBehaviour
 {
-    public Transform firePoint;
-    private Transform player;
+    public float rangeToShoot;
 
-    public float bulletSpeed;
+    public Transform firePoints;
 
-    public float range, damage;
+    public float timeBtwShots;
+    public float startTimeBtwShots;
 
-    public float fireRange;
-
-    public GameObject bullet;
+    public GameObject projectiles;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        
+        timeBtwShots = startTimeBtwShots;
     }
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, player.position) < fireRange)
-            {
-                Shoot();
-            }        
+        if (timeBtwShots <= 0)
+        {
+            Instantiate(projectiles, firePoints.position, Quaternion.identity);
+            timeBtwShots = startTimeBtwShots;
+        }
+        else
+        {
+            timeBtwShots -= Time.deltaTime;
+        }
     }
-
-    void Shoot()
-    {
-        GameObject bulletGO = Instantiate(bullet, firePoint.position, firePoint.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * bulletSpeed, ForceMode.VelocityChange);
-    }
-
 }
