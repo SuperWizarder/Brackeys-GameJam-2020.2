@@ -2412,12 +2412,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 0a706bf26caf22b4da21622dedd6cfd0, type: 2}
---- !u!54 &117441312 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 615873851669336332, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1780616636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &118392749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1228074912205708, guid: 9592a7dea975ad14ea86cfd49b776629,
@@ -2935,7 +2929,7 @@ GameObject:
   - component: {fileID: 130874483}
   - component: {fileID: 130874482}
   - component: {fileID: 130874481}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrapplePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5917,7 +5911,7 @@ GameObject:
   - component: {fileID: 303392085}
   - component: {fileID: 303392084}
   - component: {fileID: 303392083}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrapplePoints (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13454,7 +13448,7 @@ GameObject:
   - component: {fileID: 687195746}
   - component: {fileID: 687195745}
   - component: {fileID: 687195744}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrapplePoints (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19877,7 +19871,7 @@ GameObject:
   - component: {fileID: 895115359}
   - component: {fileID: 895115358}
   - component: {fileID: 895115357}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrapplePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22649,7 +22643,7 @@ GameObject:
   - component: {fileID: 1012441039}
   - component: {fileID: 1012441038}
   - component: {fileID: 1012441037}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrapplePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33904,7 +33898,7 @@ GameObject:
   - component: {fileID: 1539637378}
   - component: {fileID: 1539637377}
   - component: {fileID: 1539637376}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrapplePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34084,7 +34078,7 @@ GameObject:
   - component: {fileID: 1550062527}
   - component: {fileID: 1550062526}
   - component: {fileID: 1550062525}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrapplePoints (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39438,11 +39432,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 615873850506157642, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 615873851669336328, guid: 82ce71c282e0be84dbcb15e66199c0f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39503,41 +39492,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 615873851702944298, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305594857948852796, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: reloadTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305594857948852796, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: fireRate
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305594857948852796, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: shakeRoughness
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305594857948852796, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: shakeMagnitude
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305594857948852796, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: recoilForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305594857948852796, guid: 82ce71c282e0be84dbcb15e66199c0f4,
-        type: 3}
-      propertyPath: playerRB
-      value: 
-      objectReference: {fileID: 117441312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82ce71c282e0be84dbcb15e66199c0f4, type: 3}
 --- !u!1001 &1781541885
@@ -40016,7 +39970,7 @@ GameObject:
   - component: {fileID: 1795482547}
   - component: {fileID: 1795482546}
   - component: {fileID: 1795482545}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrapplePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
