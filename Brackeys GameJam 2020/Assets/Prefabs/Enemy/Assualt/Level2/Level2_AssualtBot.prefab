@@ -483,8 +483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 250
-  healRate: 30
-  rewindRate: 80
+  healRate: 5
+  rewindRate: 2.5
   upgradeHealth: 1000
   healthText: {fileID: 1297968878}
   nextLevel: {fileID: 300134179683319672, guid: 5260ffee4ea74c24d93fda1268f34415,
